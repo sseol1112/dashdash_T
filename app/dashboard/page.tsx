@@ -8,7 +8,7 @@ export default function Page() {
                 <div className={styles.formSection}>
                     <div className={styles.formHead}>    
                         <div className={styles.avatar}>                        
-                            D01
+                            <img src="/avatar.png" alt="User Avatar" />
                         </div>
                         <p>사용자명</p>                    
                     </div>
