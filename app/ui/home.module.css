@@ -2,6 +2,13 @@
     width: 100%;    
 }
 
+.pageTitle {
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+}
+
 .formWrap {
     display: flex;    
     flex-direction: column;        
@@ -12,13 +19,24 @@
     margin: 100px auto 0;
 }
 
+.formWrap:has(.loginBox) {
+    border:0;
+}
+
 .formSection {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 20px;    
 }
-
+/* .formSection:has(.blogSection) {
+    flex-direction: column;
+}
+.formSection:has(.blogSection) .formHead {    
+    border:0;    
+    padding-bottom: 10px;
+    justify-content: center;
+} */
 .formHead {
     display: flex;
     gap:10px;
@@ -33,6 +51,16 @@
     display: flex;
     justify-content: center;    
 }
+
+
+/* .blogSection {display: flex; flex-direction: column;} */
+
+.loginBox {display: flex; justify-content: center;}
+.loginBox form {display: flex; flex-direction: column;}
+.loginBox form div {display:flex; flex-grow: 1; align-items: center;}
+.loginBox form div:not(:first-child) {margin-top: 8px;}
+.loginBox form div label {width:80px;}
+
 .listBtn {
     padding: 10px 20px;
     background-color: black;
@@ -42,6 +70,8 @@
     cursor: pointer;
 }
 
+.blogCategory ul {display:flex; gap:10px; margin-bottom: 24px;}
+.blogCategory ul li {height:45px; background-color: black; color: #fff; padding:10px; font-size: 16px; font-weight: 500;}
 
 
 .shape {
