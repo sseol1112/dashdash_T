@@ -7,8 +7,8 @@ export default function Page() {
                 
                 <div className={styles.formSection}>
                     <div className={styles.formHead}>    
-                        <div className={styles.avatar}>                        
-                            <img src="/avatar.png" alt="User Avatar" />
+                        <div className={styles.avatar}>                            
+                            <div className="profile-img"></div>
                         </div>
                         <p>사용자명</p>                    
                     </div>
@@ -20,8 +20,6 @@ export default function Page() {
                     <button className={styles.listBtn}>목록</button>
                 </div>              
             </div>
-            
-             
         </div>
     );
 }
