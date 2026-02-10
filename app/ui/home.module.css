@@ -71,7 +71,8 @@
 }
 
 .blogCategory ul {display:flex; gap:10px; margin-bottom: 24px;}
-.blogCategory ul li {height:45px; background-color: black; color: #fff; padding:10px; font-size: 16px; font-weight: 500;}
+.blogCategory ul li {height:45px; background-color: black;}
+.blogCategory ul li a {display:block; color: #fff; padding:10px; font-size: 16px; font-weight: 500;}
 
 
 .shape {
