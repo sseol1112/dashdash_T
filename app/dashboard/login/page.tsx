@@ -40,6 +40,9 @@ export default function Page() {
                                 <Link href="/dashboard/join">
                                     회원가입
                                 </Link>
+                                <Link href="/">
+                                    홈 화면으로 이동
+                                </Link>
                             </div>                            
                         </div>  
                         <button className={styles.listBtn} type="submit">로그인</button>

@@ -1,21 +1,31 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from '@/app/ui/home.module.css';
 import Link from 'next/link';
 
 export default function Page() {
     const [userId, setUserId] = useState('');
     const [userPwd, setUserPwd] = useState('');
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // 사용자 정보 localStorage에 저장
-        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        // 벨류데이션 체크: ID, 패스워드 빈값/공백/null 불가
+        if (!userId || !userPwd || userId.trim() === '' || userPwd.trim() === '') {
+            alert('아이디와 패스워드를 모두 입력해주세요.');
+            return;
+        }
+        // 기존 users에서 빈값/공백/없는 userId 데이터 삭제 (타입 명시)
+        let users = JSON.parse(localStorage.getItem('users') || '[]');
+        users = (users as Array<{userId?: string, userPwd?: string}>).filter(u => u.userId && u.userId.trim() !== '' && u.userPwd && u.userPwd.trim() !== '');
         users.push({ userId, userPwd });
         localStorage.setItem('users', JSON.stringify(users));
         alert('회원가입이 완료되었습니다!');
         setUserId('');
-        setUserPwd('');
+        setUserPwd('');        
+        router.push('/dashboard/login');
+        
     };
     return (
         <div className={styles.layoutBasic}>            

@@ -52,14 +52,40 @@
     justify-content: center;    
 }
 
+.footSub {
+    font-size: 16px;
+    line-height:1;
+    margin: 10px 0;    
+    display: flex;   
+    gap: 0;
+    justify-content: center;
+    color: #555;    
+}
+.footSub > a:not(:last-child) {
+    position: relative;
+    padding-right: 20px;    
+}
+.footSub > a:not(:last-child)::after {
+    content:"";
+    width: 1px;
+    height: 12px;;
+    background: #555;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right:0;    
+    margin: 0 10px;
+}
+
 
 /* .blogSection {display: flex; flex-direction: column;} */
 
 .loginBox {display: flex; justify-content: center;}
-.loginBox form {display: flex; flex-direction: column;}
+.loginBox form {display: flex; flex-direction: column; gap: 8px;}
 .loginBox form div {display:flex; flex-grow: 1; align-items: center;}
-.loginBox form div:not(:first-child) {margin-top: 8px;}
 .loginBox form div label {width:80px;}
+.loginBox form div input {width: 100%;}
 
 .listBtn {
     padding: 10px 20px;
@@ -116,4 +142,104 @@
     background-size: cover;
     background-position: center;
     border-radius: 50%;
+}
+
+/* mbti */
+.mbtiBoxWrap {
+    border: 1px solid #ccc; 
+    padding: 10px 18px;    
+    margin: 0 auto;
+    border-radius: 16px;
+}
+.mbtiBoxWrap h2 { 
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;;
+}
+
+.mbtiTypeArea {
+    margin-top:16px;
+}
+
+.mbtiSection {
+    margin-top: 12px !important;
+}
+.mbtiBoxWrap {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.mbtiTypeArea select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.mbtiBoxWrap h2 {
+  color: #111;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.mbtiBoxWrap label {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.mbtiBoxWrap ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mbtiBoxWrap li {
+  background: #f9f9f9;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  color: #222;
+  font-size: 15px;
+}
+.mbtiBoxWrap strong {
+  color: #111;
+  font-weight: 600;
+}
+.mbtiBoxWrap button {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.mbtiBoxWrap button:hover {
+  background: #222;
+}
+.mbtiBoxWrap .mbtiTypeArea {
+  margin-bottom: 16px;
+}
+.mbtiBoxWrap h3 {
+  color: #222;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  margin-top: 24px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+.mbtiBoxWrap .desc {
+  color: #888;
+  font-size: 13px;
+  margin-left: 6px;
 }
