@@ -56,7 +56,7 @@ export default function Page() {
                                 </li>
                                 <li className={styles.cate}>
                                     <Link href="dashboard/blog/menu2">
-                                       메뉴2
+                                       일일 체크리스트
                                     </Link>
                                 </li>
                                 <li className={styles.cate}>

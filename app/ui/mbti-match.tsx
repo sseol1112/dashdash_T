@@ -49,7 +49,7 @@ export default function MbtiMatch() {
 
   return (
     <div className={styles.formSection}>
-        <div className={styles.mbtiBoxWrap}>
+        <div className={styles.formBoxWrap}>
             <h2>나와 잘 맞는 MBTI 직업 & 유형 찾기 👀 </h2>
             <label>
                 내 MBTI 유형을 선택하세요

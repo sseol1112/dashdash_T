@@ -1,9 +1,12 @@
 {
   "private": true,
+  "homepage": "https://sseol1112.github.io/dashdash_T/",
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d out"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -26,7 +29,8 @@
     "@types/bcrypt": "^5.0.2",
     "@types/node": "22.10.7",
     "@types/react": "19.0.7",
-    "@types/react-dom": "19.0.3"
+    "@types/react-dom": "19.0.3",
+    "gh-pages": "^6.0.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

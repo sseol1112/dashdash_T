@@ -1,21 +1,60 @@
 'use client';
-import { useState } from 'react';
+import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import styles from '@/app/ui/home.module.css';
 import Link from 'next/link';
 
-export default function Page() {
-     
+
+
+export default function Todo() {
+    const [text, setText] = useState("");
+    const [todos, setTodos] = useState<string[]>([]);
+  
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if(text != "") {
+            setTodos((prev) => [...prev, text]);
+            setText("");
+        } else {            
+            alert("값을 입력해주세요.");
+            return;
+        }
+    };
+  
+    const deleteTask = (e : React.MouseEvent) => {
+        e.preventDefault();
+
+        console.log(e.target.parentElement);
+        e.target.parentElement.remove();
+
+    }
     return (
-        <div className={styles.layoutBasic}>            
-            <div className={styles.formWrap}>        
-                <h3 className={styles.pageTitle}>menu2</h3>            
-                <div className={styles.loginBox}>
-                    <Link href="/dashboard" className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base">
-                        <span>대쉬보드로 이동</span>
-                    </Link>
+        <div className={styles.formSection}>
+            <div className={styles.toDoWorkWrap}>
+                <div className={styles.formBoxWrap}>                
+                    <form onSubmit={handleSubmit} className={styles.worksArea}> 
+                        <label htmlFor="works" className={styles.titLabel}>
+                            할 일을 입력해주세요
+                        </label>
+                        <div className={styles.worksInput}>
+                            <input type="text" id="works" value={text}
+                            onChange={(e) => setText(e.target.value)} />
+                            <button type="submit">추가</button>
+                        </div>                  
+                    </form>
+            
+                    <div className={styles.worksListArea}>
+                        <ul>
+                            {todos.map((todo, index) => (
+                                <li key={index}>
+                                    {todo}
+                                    <button className={styles.smBtn} onClick={deleteTask}>삭제</button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     );
-}
+  }
