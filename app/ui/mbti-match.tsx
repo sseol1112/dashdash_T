@@ -66,7 +66,9 @@ export default function MbtiMatch() {
             </label>
 
             <div style={{marginTop: '1rem'}}>
-                <button onClick={handleClick}>추천 직업 보기</button>
+                <div className={styles.btnRecommendJob}>
+                  <button className={styles.btnBasic} onClick={handleClick}>추천 직업 보기</button>
+                </div>
                 {flag === "1" && selected && (
                   <div style={{marginTop:'1rem'}}>
                       <strong>{selected} 추천 직업:</strong>                    

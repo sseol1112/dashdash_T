@@ -5,8 +5,8 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d out"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -14,6 +14,7 @@
     "autoprefixer": "10.4.20",
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",
+    "gsap": "^3.14.2",
     "next": "latest",
     "next-auth": "5.0.0-beta.25",
     "postcss": "8.5.1",
