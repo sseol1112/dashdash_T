@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from '@/app/ui/home.module.css';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
-import Hero from '@/app/components/Hero';
+import Loading from '@/app/components/Loading';
 
 export default function Page() {
   return (
@@ -39,7 +39,8 @@ export default function Page() {
             height={620}
             className="block md:hidden"
           /> */}
-          <Hero />
+          <Loading />
+          <div>Main Visual Area</div>
         </div>
       </div>
     </main>

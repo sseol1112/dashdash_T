@@ -5,20 +5,26 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import NavLinks from '@/app/ui/dashboard/nav-links';
 import AcmeLogo from '@/app/ui/acme-logo';
+import styles from '@/app/ui/home.module.css';
 import { PowerIcon } from '@heroicons/react/24/outline';
 
 export default function SideNav() {
   const router = useRouter();
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(true);  
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const user = localStorage.getItem('currentUser');
+    if (typeof window !== 'undefined') {      
+      const user = localStorage.getItem('currentUser')
       if (!user) {
         setIsAuth(false);
         router.replace('/dashboard/login');
-      } 
+      }
     }
   }, [router]);
+
+
+
+
   
   // if (!isAuth) return null;
 
@@ -30,7 +36,7 @@ export default function SideNav() {
       >
         <div className="w-32 text-white md:w-40">
           <AcmeLogo />
-        </div>
+        </div>        
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />

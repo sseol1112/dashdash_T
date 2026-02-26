@@ -298,12 +298,9 @@
 
 /* menu3 (gsap) */
 .boxGsapWrap {
-  background: #acacac;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color: #fff;
-  flex-direction: column;
+  background: #acacac;  
+  color: #fff;  
+  padding: 0 20px;
 }
 
 .btnBasic {
@@ -316,4 +313,25 @@
 .btnRecommendJob {
   display: flex;
   justify-content: center;
+}
+.flexDft {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.txtArea_Head {
+  padding: 60px 24px 0; 
+  display: flex; justify-content: flex-start;
+}
+.Head_title {
+  font-size: 26px;
+  line-height: 1;
+}
+.txtArea_Body {
+  padding: 18px 24px;
+}
+.Body_desc {
+  font-size: 18px;
+  line-height: 1;
 }

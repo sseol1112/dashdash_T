@@ -1,41 +1,101 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import styles from '@/app/ui/home.module.css';
 
 export default function Hero() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const heroRef2 = useRef<HTMLDivElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
+ 
   useEffect(() => {
-    const text = titleRef.current!;
-    const letters = text.innerText.split("");
-
-    text.innerHTML = letters
-      .map((letter) =>
-        letter === " "
-          ? `<span>&nbsp;</span>`
-          : `<span style="display:inline-block">${letter}</span>`
-      )
-      .join("");
+    // if (!isLoaded) return;
 
     gsap.fromTo(
-      text.children,
-      { y: 100, opacity: 0 },
+      heroRef.current,
+      { opacity: 0, y: 80 },
       {
-        y: 0,
         opacity: 1,
-        stagger: 0.03,
-        duration: 0.8,
-        ease: "power4.out",
+        y: 0,
+        duration: 1.4,
+        ease: "power3.out",
       }
     );
-  }, []);
+  }, [isLoaded]);
+
+  useEffect(() => {
+    // if (!isLoaded) return;
+
+    gsap.fromTo(
+      heroRef2.current,
+      { opacity: 0, y: 80 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.4,
+        ease: "power3.out",
+      }
+    );
+  }, [isLoaded]);
 
   return (
-    <section style={{ display: "block", alignItems: "center", justifyContent: "center" }}>
-      <h1 ref={titleRef} style={{ fontSize: "4rem", fontWeight: "bold" }}>
-        My Dashboard
-      </h1>
-    </section>
+    <>
+      
+      {/* Hero Section */}
+      <section
+        style={{
+          height: "550px",
+          background: "#000",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div ref={heroRef} style={{ opacity: 0 }}>
+          <div
+            style={{
+              fontSize: "4rem",
+              fontWeight: 600,
+              color: "#fff",
+              letterSpacing: "-0.03em",
+            }}
+          >
+            {/* <img src="" /> */}
+            hero banner Image
+          </div>
+        </div>
+      </section>
+
+      <section
+        style={{        
+          background: "#fff",
+          height: "100vh",
+          display: "block",
+          alignItems: "center",
+          justifyContent: "center",
+          color:"000",
+        }}
+      >
+        <div ref={heroRef2} style={{ opacity: 0 }}>
+          <div
+            style={{
+              fontSize: "1rem",
+              fontWeight: 600,
+              color: "#000",
+              letterSpacing: "-0.03em",
+            }}
+          >
+            <div className={styles.txtArea_Head}>
+              <h2 className={styles.Head_title}>title</h2>
+            </div>
+            <div className={styles.txtArea_Body}>
+              <p className={styles.Body_desc}>desc..........</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
